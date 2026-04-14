@@ -4,68 +4,526 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Privacy Policy - MavDroid</title>
+    <meta name="description" content="Privacy Policy for MavDroid by SK-Delta Works" />
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.7;
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 16px;
-            color: #222222;
+        :root {
+            --bg-color: #0b1020;
+            --bg-accent: #111936;
+            --card-color: rgba(255, 255, 255, 0.08);
+            --card-border: rgba(255, 255, 255, 0.14);
+            --text-color: #f4f7fb;
+            --muted-color: #c8d1e0;
+            --accent-color: #6dd5fa;
+            --accent-color-strong: #2980b9;
+            --success-color: #4ade80;
+            --warning-color: #fbbf24;
+            --shadow-color: rgba(0, 0, 0, 0.25);
         }
 
-        h1, h2 {
-            color: #111111;
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background:
+                radial-gradient(circle at top left, rgba(109, 213, 250, 0.16), transparent 30%),
+                radial-gradient(circle at top right, rgba(41, 128, 185, 0.20), transparent 30%),
+                linear-gradient(180deg, var(--bg-accent) 0%, var(--bg-color) 100%);
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .page-shell {
+            width: 100%;
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background-color: rgba(11, 16, 32, 0.78);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .topbar-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 14px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .brand {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+        }
+
+        .brand-sub {
+            display: block;
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--muted-color);
+            margin-top: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            color: var(--muted-color);
+        }
+
+        .hero {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 56px 20px 28px 20px;
+        }
+
+        .hero-card {
+            padding: 36px;
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.05));
+            box-shadow: 0 18px 50px var(--shadow-color);
+        }
+
+        .eyebrow {
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background-color: rgba(109, 213, 250, 0.14);
+            color: var(--accent-color);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            margin: 0 0 14px 0;
+            font-size: 40px;
+            line-height: 1.2;
+        }
+
+        .hero-description {
+            margin: 0;
+            max-width: 840px;
+            font-size: 17px;
+            color: var(--muted-color);
+        }
+
+        .hero-meta {
+            margin-top: 24px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .meta-badge {
+            padding: 10px 14px;
+            border-radius: 14px;
+            background-color: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 13px;
+            color: var(--muted-color);
+        }
+
+        .content {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 12px 20px 64px 20px;
         }
 
         .section {
             margin-top: 28px;
         }
+
+        .section-card {
+            border: 1px solid var(--card-border);
+            border-radius: 22px;
+            padding: 28px;
+            background-color: var(--card-color);
+            box-shadow: 0 14px 40px var(--shadow-color);
+        }
+
+        .section-title {
+            margin: 0 0 10px 0;
+            font-size: 28px;
+        }
+
+        .section-text {
+            margin: 0;
+            color: var(--muted-color);
+            font-size: 16px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .info-card {
+            padding: 20px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+        }
+
+        .info-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+        }
+
+        .info-card p {
+            margin: 0;
+            color: var(--muted-color);
+            font-size: 15px;
+        }
+
+        .policy-list {
+            margin: 16px 0 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .policy-list li {
+            margin-top: 12px;
+            padding: 16px 18px;
+            border-radius: 16px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--muted-color);
+        }
+
+        .policy-list strong {
+            display: inline-block;
+            color: var(--text-color);
+            margin-bottom: 6px;
+        }
+
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 18px;
+        }
+
+        .status-card {
+            padding: 18px;
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .status-label {
+            display: inline-block;
+            margin-bottom: 10px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+        }
+
+        .status-label.green {
+            color: var(--success-color);
+        }
+
+        .status-label.yellow {
+            color: var(--warning-color);
+        }
+
+        .status-card p {
+            margin: 0;
+            color: var(--muted-color);
+            font-size: 15px;
+        }
+
+        .contact-box {
+            margin-top: 18px;
+            padding: 22px;
+            border-radius: 18px;
+            background: linear-gradient(180deg, rgba(109, 213, 250, 0.12), rgba(41, 128, 185, 0.10));
+            border: 1px solid rgba(109, 213, 250, 0.22);
+        }
+
+        .contact-box p {
+            margin: 8px 0 0 0;
+            color: var(--muted-color);
+        }
+
+        .footer {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 20px 40px 20px;
+        }
+
+        .footer-card {
+            border-top: 1px solid rgba(255, 255, 255, 0.10);
+            padding-top: 22px;
+            color: var(--muted-color);
+            font-size: 14px;
+        }
+
+        .footer-card p {
+            margin: 6px 0;
+        }
+
+        @media (max-width: 860px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .status-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .hero-card {
+                padding: 28px;
+            }
+
+            .section-card {
+                padding: 22px;
+            }
+
+            .topbar-inner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .hero {
+                padding-top: 34px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>Privacy Policy for MavDroid</h1>
+    <div class="page-shell">
+        <header class="topbar">
+            <div class="topbar-inner">
+                <div class="brand">
+                    SK-Delta Works
+                    <span class="brand-sub">Privacy Policy</span>
+                </div>
+                <nav class="nav-links">
+                    <a href="#overview">Overview</a>
+                    <a href="#data-handling">Data Handling</a>
+                    <a href="#permissions">Permissions</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </header>
 
-    <p>
-        MavDroid is provided by SK-Delta Works.
-    </p>
+        <section class="hero">
+            <div class="hero-card">
+                <div class="eyebrow">MavDroid Policy Page</div>
+                <h1>Privacy Policy for MavDroid</h1>
+                <p class="hero-description">
+                    MavDroid is provided by SK-Delta Works. This page explains how the app handles
+                    data and device access when used as a MAVLink bridge and RTSP streaming tool
+                    for USB-connected flight controllers, including ArduPilot and PX4.
+                </p>
 
-    <p>
-        MavDroid is an Android app that provides MAVLink communication bridging and RTSP video streaming
-        for flight controllers connected via USB, including ArduPilot and PX4.
-    </p>
+                <div class="hero-meta">
+                    <div class="meta-badge">App: MavDroid</div>
+                    <div class="meta-badge">Developer: SK-Delta Works</div>
+                    <div class="meta-badge">Last Updated: 2026-04-15</div>
+                </div>
+            </div>
+        </section>
 
-    <div class="section">
-        <h2>Data Handling</h2>
-        <p>
-            MavDroid does not require user account registration.
-        </p>
-        <p>
-            MavDroid does not sell user data.
-        </p>
-        <p>
-            MavDroid does not display third-party ads.
-        </p>
-        <p>
-            MavDroid may use USB connection, network access, and camera access only for the core functionality
-            of MAVLink bridging and RTSP streaming.
-        </p>
-        <p>
-            Unless otherwise stated, data processed by the app is handled locally on the device.
-        </p>
-    </div>
+        <main class="content">
+            <section id="overview" class="section">
+                <div class="section-card">
+                    <h2 class="section-title">Overview</h2>
+                    <p class="section-text">
+                        MavDroid is an Android app that provides MAVLink communication bridging
+                        and RTSP video streaming for flight controllers connected to an Android device via USB.
+                        It is intended for experiments, testing, and development use.
+                    </p>
 
-    <div class="section">
-        <h2>Contact</h2>
-        <p>
-            For questions about this Privacy Policy, contact:
-            <a href="mailto:[YOUR_EMAIL]">[skdeltaworks0923@gmai.com]</a>
-        </p>
-    </div>
+                    <div class="grid">
+                        <div class="info-card">
+                            <h3>Main Purpose</h3>
+                            <p>
+                                Bridge MAVLink communication between a ground station device
+                                and a USB-connected flight controller.
+                            </p>
+                        </div>
 
-    <div class="section">
-        <h2>Last updated</h2>
-        <p>2026-04-15</p>
+                        <div class="info-card">
+                            <h3>Video Streaming</h3>
+                            <p>
+                                Stream camera video from the Android device through RTSP
+                                for local or VPN-based receiving environments.
+                            </p>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>Supported Targets</h3>
+                            <p>
+                                USB-connected flight controllers using ArduPilot or PX4 based systems.
+                            </p>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>Use Environment</h3>
+                            <p>
+                                A compatible USB connection, proper communication settings,
+                                and a network path between sender and receiver are required.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="data-handling" class="section">
+                <div class="section-card">
+                    <h2 class="section-title">Data Handling</h2>
+                    <p class="section-text">
+                        The app is designed to focus on device-side communication and streaming functions.
+                        The following points describe how data is handled.
+                    </p>
+
+                    <ul class="policy-list">
+                        <li>
+                            <strong>No account registration required</strong><br />
+                            MavDroid does not require the user to create an account to use its core features.
+                        </li>
+                        <li>
+                            <strong>No sale of user data</strong><br />
+                            MavDroid does not sell user data to third parties.
+                        </li>
+                        <li>
+                            <strong>No third-party advertising</strong><br />
+                            MavDroid does not display third-party ads in the app.
+                        </li>
+                        <li>
+                            <strong>Local function-oriented use of permissions</strong><br />
+                            USB connection, network access, and camera access are used only for the
+                            core functionality of MAVLink bridging and RTSP streaming.
+                        </li>
+                        <li>
+                            <strong>Local processing by default</strong><br />
+                            Unless otherwise stated, data processed by the app is handled locally
+                            on the device for its core functionality.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="permissions" class="section">
+                <div class="section-card">
+                    <h2 class="section-title">Permissions and Access</h2>
+                    <p class="section-text">
+                        MavDroid may require access to device features depending on how the app is used.
+                    </p>
+
+                    <div class="status-grid">
+                        <div class="status-card">
+                            <div class="status-label green">USB ACCESS</div>
+                            <p>
+                                Used to communicate with supported flight controllers connected
+                                to the Android device.
+                            </p>
+                        </div>
+
+                        <div class="status-card">
+                            <div class="status-label green">NETWORK ACCESS</div>
+                            <p>
+                                Used for MAVLink network bridging and RTSP streaming between sender
+                                and receiving devices.
+                            </p>
+                        </div>
+
+                        <div class="status-card">
+                            <div class="status-label yellow">CAMERA ACCESS</div>
+                            <p>
+                                Used only when the RTSP video streaming function is enabled by the user.
+                            </p>
+                        </div>
+                    </div>
+
+                    <ul class="policy-list">
+                        <li>
+                            <strong>Communication requirements</strong><br />
+                            The Android device connected to the flight controller and the receiving device
+                            must be able to communicate with each other over the network.
+                        </li>
+                        <li>
+                            <strong>Supported network layouts</strong><br />
+                            Use the app within the same Wi-Fi network, or when operating outdoors or across
+                            external networks, connect both sides through a VPN.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="contact" class="section">
+                <div class="section-card">
+                    <h2 class="section-title">Contact</h2>
+                    <p class="section-text">
+                        For questions about this Privacy Policy or the app, please contact SK-Delta Works.
+                    </p>
+
+                    <div class="contact-box">
+                        <strong>Email</strong>
+                        <p>
+                            <a href="mailto:YOUR_EMAIL@example.com">skdeltaworks0923@gmail.com</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-card">
+                <p><strong>MavDroid</strong> by <strong>SK-Delta Works</strong></p>
+                <p>This page is intended to provide a clear and public privacy notice for the app.</p>
+                <p>Last updated: 2026-04-15</p>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
